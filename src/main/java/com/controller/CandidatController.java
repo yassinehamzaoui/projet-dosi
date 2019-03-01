@@ -15,54 +15,61 @@ import com.beans.Candidat;
 @RestController
 @RequestMapping(path = "/candidat")
 public class CandidatController {
-	
+
 	@Autowired
-    private CandidatBusiness business;
+	private CandidatBusiness business;
 
-    @Autowired
-    public CandidatController(CandidatBusiness business) {
-        this.business = business;
-    }
+	@Autowired
+	public CandidatController(CandidatBusiness business) {
+		this.business = business;
+	}
 
-  	@RequestMapping("/getAllCandidat")
-  	public List<Candidat> getAllCandidat() {
+	// method to get all candidate
+	@RequestMapping("/getAllCandidat")
+	public List<Candidat> getAllCandidat() {
 		return business.getAllCandidat();
 	}
-  	
-	@RequestMapping(value="/SearchCandidatByCode/{codeCandidat}", method = RequestMethod.GET)
+
+	// method to get candidate by id
+	@RequestMapping(value = "/SearchCandidatByCode/{codeCandidat}", method = RequestMethod.GET)
 	public Optional<Candidat> SearchByCodeCandidat(@PathVariable String codeCandidat) {
 		return business.SearchByCodeCandidat(codeCandidat);
 	}
+
+	// method to add candidate
 	@RequestMapping(method = RequestMethod.POST)
 	public Candidat AddCandidat(@RequestBody Candidat candidat) {
 		return business.AddCandidat(candidat);
 	}
-	
+
+	// method to update candidate
 	@RequestMapping(method = RequestMethod.PUT)
 	public void UpdateCandidat(@RequestBody Candidat candidat) {
 		this.business.UpdateCandidat(candidat);
 	}
-	
+
+	// method to delete all candidates
 	@RequestMapping("/deleteAllCandidat")
-  	public void deleteAllCandidat() {
-		 business.deleteAllCandidat();
+	public void deleteAllCandidat() {
+		business.deleteAllCandidat();
 	}
-	
-	@RequestMapping(value="/delete/{codeCandidat}" ,method = RequestMethod.DELETE)
-	public void DeleteCandidat(@PathVariable("codeCandidat")  String codeCandidat){
+
+	// method to get delete candidate by id
+	@RequestMapping(value = "/delete/{codeCandidat}", method = RequestMethod.DELETE)
+	public void DeleteCandidat(@PathVariable("codeCandidat") String codeCandidat) {
 		this.business.DeleteCandidat(codeCandidat);
 	}
-	
-	@RequestMapping(value="/SearchCandidatByUniv/{nomUniv}" ,method = RequestMethod.GET)
-	public Candidat SearchCandidatByUniv(@PathVariable("nomUniv") String nomUniv){
+
+	// method to get candidate by university
+	@RequestMapping(value = "/SearchCandidatByUniv/{nomUniv}", method = RequestMethod.GET)
+	public Candidat SearchCandidatByUniv(@PathVariable("nomUniv") String nomUniv) {
 		return business.SearchCandidatByUniv(nomUniv);
 	}
-	
-	@RequestMapping(value="/SearchCandidatByName/{nomCandidat}", method = RequestMethod.GET)
-	public Candidat SearchCandidatByName(@PathVariable("nomCandidat") String nomCandidat){
+
+	// method to get candidate by name
+	@RequestMapping(value = "/SearchCandidatByName/{nomCandidat}", method = RequestMethod.GET)
+	public Candidat SearchCandidatByName(@PathVariable("nomCandidat") String nomCandidat) {
 		return business.SearchCandidatByName(nomCandidat);
 	}
-	
-  	
-  	
+
 }

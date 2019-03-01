@@ -3,6 +3,12 @@ package com.beans;
 import java.io.Serializable;
 import javax.persistence.*;
 
+
+/**
+ * the primary key class of element_constitutif database table.
+ * 
+ */
+
 @Embeddable
 public class ElementConstitutifPK implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -10,6 +10,7 @@ import java.util.Date;;
  * The persistent class for the promotion database table.
  * 
  */
+
 @Entity
 @Table(name="PROMOTION")
 @NamedQuery(name="Promotion.findAll", query="SELECT p FROM Promotion p")
