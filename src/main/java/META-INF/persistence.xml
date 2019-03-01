@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="project-01">
+		<class>com.beans.Candidat</class>
+		<class>com.beans.Enseignant</class>
+		<class>com.beans.Etudiant</class>
+		<class>com.beans.Formation</class>
+		<class>com.beans.ElementConstitutif</class>
+		<class>com.beans.ElementConstitutifPK</class>
+		<class>com.beans.Promotion</class>
+		<class>com.beans.UniteEnseignement</class>
+		<class>com.beans.UniteEnseignementPK</class>
+		<class>com.beans.PromotionPK</class>
+	</persistence-unit>
+</persistence>
