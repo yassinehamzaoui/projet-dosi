@@ -6,11 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EntityScan("com.beans")
 @EnableJpaRepositories(basePackages = {"com.repository"})
 @Configuration
+@Import(SwaggerConfig.class)
 @EnableAutoConfiguration
 @ComponentScan("com.controller")
 
